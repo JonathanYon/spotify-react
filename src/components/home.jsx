@@ -5,11 +5,15 @@ import "../Styles/index.css";
 import { IconName } from "react-icons/fa";
 import SideBar from "./SideBar";
 import TopNav from "./TopNav";
+import BottomBar from "./BottomBar";
 
 export default class Home extends Component {
   state = {
     album: [],
+    input: "",
   };
+
+  handleSearch = () => {};
 
   componentDidMount = async () => {
     try {
@@ -33,37 +37,31 @@ export default class Home extends Component {
 
   render() {
     return (
-      //   <Container fluid>
       <>
-        <SideBar />
-        <Container className="mr-n5">
-          <TopNav />
-          <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              onkeydown="userInput(event)"
-            />
-            <button
-              class="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-              onclick="fetchData()"
-            >
-              Search
-            </button>
-          </form>
-          <div className="row px-3 manual-query ">
-            {this.state.album.map((card) => (
-              <div sm={3} key={card.id} className="pl-0">
-                <SingleCard album={card} />
-              </div>
-            ))}
-          </div>
-        </Container>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            onkeydown="userInput(event)"
+          />
+          <button
+            class="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+            onclick="fetchData()"
+          >
+            Search
+          </button>
+        </form>
+        <div className="row px-3 manual-query mr-n5">
+          {this.state.album.map((card) => (
+            <div sm={12} md={3} key={card.id} className="pl-0">
+              <SingleCard album={card} />
+            </div>
+          ))}
+        </div>
       </>
-      //   </Container>
     );
   }
 }

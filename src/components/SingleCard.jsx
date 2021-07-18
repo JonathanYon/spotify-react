@@ -2,8 +2,9 @@ import { Component } from "react";
 import { Card } from "react-bootstrap";
 import "../Styles/index.css";
 import { IconName } from "react-icons/fa";
+import { withRouter } from "react-router-dom";
 
-export default class SingleCard extends Component {
+class SingleCard extends Component {
   state = {};
   render() {
     return (
@@ -17,10 +18,21 @@ export default class SingleCard extends Component {
           <div className="play"></div>
         </div>
         <div className="card-body px-2 pt-0">
-          <h5 className="card-title mb-1 text-white">
+          <h5
+            className="card-title mb-1 text-white"
+            onClick={() =>
+              this.props.history.push("/album/" + this.props.album.album.id)
+            }
+          >
             {this.props.album.title}
           </h5>
-          <p className="card-text text-white-50">
+
+          <p
+            className="card-text text-white-50"
+            onClick={() =>
+              this.props.history.push("/artist/" + this.props.album.artist.id)
+            }
+          >
             {this.props.album.artist.name}
           </p>
         </div>
@@ -28,3 +40,4 @@ export default class SingleCard extends Component {
     );
   }
 }
+export default withRouter(SingleCard);

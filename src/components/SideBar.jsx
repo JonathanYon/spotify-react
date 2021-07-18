@@ -6,7 +6,7 @@ export default class SideBar extends Component {
 
   render() {
     return (
-      <div className="side-bar d-flex myWidth ml-0">
+      <div className="side-bar d-flex myWidth ml-n3">
         <div className="row">
           <div className="col-12">
             <div className="logo ml-4">

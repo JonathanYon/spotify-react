@@ -197,7 +197,7 @@ p img {
   object-fit: cover;
 }
 
-.img-bgd {
+/* .img-bgd {
   background-image: url("./img/Adam-Lambert-ALBUM-COVER.jpg");
   position: relative;
   min-height: 350px;
@@ -205,7 +205,7 @@ p img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 .album-name {
   background-color: transparent;
   position: absolute;
