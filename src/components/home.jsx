@@ -22,7 +22,7 @@ export default class Home extends Component {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNjBjNGIzNTgxNzAwMTVjMjI3MGQiLCJpYXQiOjE2MjU3NDgzNzQsImV4cCI6MTYyNjk1Nzk3NH0.BydDaakd8oh2658A1B7CI3-gjsU729gWFgfbKupLjFc",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQ0Y2I5NThiZTkxNjAwMTUwN2Y4NzkiLCJpYXQiOjE2MzE4OTg1MTcsImV4cCI6MTYzMzEwODExN30.maiwEWUdQ9QhdvEZrhFvGl37dIUy8a7TnJin1GoqlkM",
           },
         }
       );
@@ -54,13 +54,16 @@ export default class Home extends Component {
             Search
           </button>
         </form>
-        <div className="row px-3 manual-query mr-n5">
-          {this.state.album.map((card) => (
-            <div sm={12} md={3} key={card.id} className="pl-0">
-              <SingleCard album={card} />
-            </div>
-          ))}
-        </div>
+
+        <Container>
+          <Row className="px-3 manual-query" id="card-row">
+            {this.state.album.map((card) => (
+              <Col sm={3} className="pl-0">
+                <SingleCard album={card} key={card.id} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </>
     );
   }

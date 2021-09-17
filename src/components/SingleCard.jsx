@@ -1,6 +1,7 @@
 import { Component } from "react";
-import { Card } from "react-bootstrap";
-import "../Styles/index.css";
+import { Card, Row, Col, Container } from "react-bootstrap";
+// import "../Styles/index.css";
+import "../Styles/singlecard.css";
 import { IconName } from "react-icons/fa";
 import { withRouter } from "react-router-dom";
 
@@ -8,35 +9,53 @@ class SingleCard extends Component {
   state = {};
   render() {
     return (
-      <div class="card h-100 bgcard mr-2">
+      <Card className="h-100 bg-dark">
         <div className="position-relative">
           <img
-            src={this.props.album.album.cover_medium}
             className="card-img-top img-fluid rounded py-3 px-2"
-            alt="cover album"
+            src={this.props.album.album.cover_medium}
           />
           <div className="play"></div>
         </div>
-        <div className="card-body px-2 pt-0">
-          <h5
-            className="card-title mb-1 text-white"
-            onClick={() =>
-              this.props.history.push("/album/" + this.props.album.album.id)
-            }
-          >
-            {this.props.album.title}
-          </h5>
+        <Card.Body className="px-2 pt-0">
+          <a href="">
+            <Card.Title className="mb-1 text-white">
+              {this.props.album.title}
+            </Card.Title>
+          </a>
+          <a href="">
+            <Card.Text className="text-white">
+              {this.props.album.artist.name}
+            </Card.Text>
+          </a>
+        </Card.Body>
+      </Card>
 
-          <p
-            className="card-text text-white-50"
-            onClick={() =>
-              this.props.history.push("/artist/" + this.props.album.artist.id)
-            }
-          >
-            {this.props.album.artist.name}
-          </p>
-        </div>
+      /* <Row className="justify-content-between px-3">
+        <div className="d-flex"><h6 className="mt-3 h6-body">Shows to try</h6></div>
+        <div className="d-flex"><h6 className="sea-all mt-3">SEE ALL</h6></div>
+      </Row>
+      <Row className="px-3">
+      <div className="d-flex">
+        <h6 className="sub-title">Podcasts we think you might like</h6>
       </div>
+      </Row>
+      <Row className="px-3 manual-query">
+      <Col className="pl-0">
+      <Card className="h-100">
+      <div className="position-relative">
+      <img className="card-img-top img-fluid rounded py-3 px-2" src="holder.js/100px180" />
+      </div>
+      <Card.Body className="px-2 pt-0">
+      <Card.Title className="mb-1 text-white">Joe Rogan Experience</Card.Title>
+      <Card.Text className="text-white text-white-50">Joe Rogan</Card.Text>
+      </Card.Body>
+      </Card>
+      </Col>
+      </Row> 
+  
+    
+    */
     );
   }
 }

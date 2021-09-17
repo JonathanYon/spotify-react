@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.play {
+  position: absolute;
+  bottom: 21px;
+  right: 21px;
+  width: 40px;
+  height: 40px;
+  font-size: x-large;
+  opacity: 0;
+  border-radius: 50%;
+  background-color: #1db954;
+  transition: all 0.4s ease;
+}
+
+.play::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-left: 10px solid rgb(255, 255, 255);
+  border-bottom: 7px solid transparent;
+  top: 0;
+  right: -3px;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.card {
+  background-color: #1d1d1d;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.card-body {
+  padding: 5px;
+}
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: bolder;
+  font-size: 14px;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 13px;
+}
+.card-text {
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@media (max-width: 1199.98px) {
+  .manual-query {
+    justify-content: space-between;
+  }
+}
