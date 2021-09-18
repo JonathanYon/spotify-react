@@ -3,11 +3,12 @@ import { Card, Row, Col, Container } from "react-bootstrap";
 // import "../Styles/index.css";
 import "../Styles/singlecard.css";
 import { IconName } from "react-icons/fa";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class SingleCard extends Component {
   state = {};
   render() {
+    console.log("this props", this.props.album);
     return (
       <Card className="h-100 bg-dark">
         <div className="position-relative">
@@ -18,16 +19,17 @@ class SingleCard extends Component {
           <div className="play"></div>
         </div>
         <Card.Body className="px-2 pt-0">
-          <a href="">
+          <Link to={`/album/${this.props.album.album.id}`}>
             <Card.Title className="mb-1 text-white">
-              {this.props.album.title}
+              {this.props.album.album.title}
             </Card.Title>
-          </a>
-          <a href="">
+          </Link>
+
+          <Link to={`/artist/${this.props.album.artist.id}`}>
             <Card.Text className="text-white">
               {this.props.album.artist.name}
             </Card.Text>
-          </a>
+          </Link>
         </Card.Body>
       </Card>
 
